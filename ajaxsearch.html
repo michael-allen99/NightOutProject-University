@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Night Out AJAX Search</title>
+
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<script type='text/javascript'>
+		function ajaxrequest()
+		{
+			// Create the XMLHttpRequest variable.
+			// This variable represents the AJAX communication between client and
+			// server.
+			var xhr2 = new XMLHttpRequest();
+
+			// Read the data from the form fields.
+			var venue_input = document.getElementById("venuetype").value;
+
+			// Specify the CALLBACK function. 
+			// When we get a response from the server, the callback function will run
+			xhr2.addEventListener ("load", responseReceived);
+
+			// Open the connection to the server
+			// We are sending a request to "flights.php" in the same folder
+			// and passing in the 
+			// destination and date as a query string. 
+			xhr2.open('GET',
+				'ajaxrequest.php?venue=' + venue_input);
+
+			// Send the request.
+			xhr2.send();
+		}
+		function responseReceived(e)
+		{
+			document.getElementById('response').innerHTML = e.target.responseText;
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="sectionarea welcome">
+		<h1>AJAX Night Out Search!</h1>
+		<div id="reviewed"></div>
+	</div>
+	<div class="sectionarea">
+		<p>
+		Venue Type: (E.g Restuarant, Club, Bar, Pub)<br/>
+		<input name='venuetype' id='venuetype' onkeyup='ajaxrequest()' />
+		
+		<input type="button" value="Go!" onclick="ajaxrequest()" />
+		</p>
+	</div>
+	
+	<div id="response"></div>
+
+</body>
+</html>
