@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>title</title>
+    <title>Login</title>
   <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
@@ -18,9 +18,12 @@
 	$password = $_POST["password"];
 	
 	//Query the username and passwords match
-	$results = $conn->query("select * from users where name='$username' AND password='$password'");
+	$results = $conn->prepare("select * from users where name=? AND password=?");
+	$results->bindParam(1,$username);
+	$results->bindParam(2,$password);
+	$results->execute();
 	
-	//Try to fetch a row
+	//Try to fetch a row from users table
 	$row = $results->fetch();
 	if($row == false)
 	{

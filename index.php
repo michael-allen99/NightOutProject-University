@@ -43,7 +43,7 @@
 				</form>
 			</div>
 			<div class="sectionarea">
-				<a href="ajaxsearch.html"><h2>Search for a venue using AJAX</h2></a>
+				<h2><a href="ajaxsearch.html">Search for a venue using AJAX</a></h2>
 			</div>
 			';
 		if ($_SESSION["gatekeeper"] == "admin")	

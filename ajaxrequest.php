@@ -17,10 +17,10 @@
 			echo "<a href='viewreview.php?id=" . $row['ID'] . "&name="  . $row['name']."'>View reviews for this venue</a>";
 			echo "<h3>Leave a review for $name</h3>";
 			$id = $row['ID'];
-			echo "<form method='post' action='review.php'>";
-			echo "<input type='hidden' name='id' value=$id>";
-			echo "<input type='text' name='review_comment'>";
-			echo "<input type='submit' name='Submit Review'>";
+			echo "<form method='post'>";
+			echo "<input type='hidden' id='id 'name='id' value=$id>";
+			echo "<input type='text' id='review' name='review_comment'>";
+			echo "<input type='submit' name='Submit Review' onclick='ajaxrequest2()'>";
 			echo "</form><br><br><br></div>";
 			
 		}

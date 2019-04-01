@@ -1,17 +1,25 @@
 body {
-	background-image: url("background.jpg");
-	background-repeat: no-repeat;
-	background-color: lightgray;
 	font-family: Helvetica;
 	width: 80%;
 	margin: 0 auto;
 	margin-top: 20px;
+	color: #005670;
+}
+
+a{
+	text-decoration: none;
+	color: #005670;
+	font-style: italic;
+}
+a:hover {
+	font-weight: bold;
 }
 
 .sectionarea {
 	margin-top: 20px;
 	padding: 20px;
-	background-color: rgba(255,255,255,0.7);
+	text-align: center;
+	border: 2px solid #005670;
 }
 
 .sectionarea input[type="submit"]{
@@ -50,6 +58,5 @@ input[type="submit"]:hover {
 
 #response {
 	padding: 20px;
-	background-color: rgba(255,255,255,0.7);
 	height: auto;
 }
